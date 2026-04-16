@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Game } from "@/features/games/hooks/types";
 import GameCard from "@/features/games/components/GameCard";
 import AddGameForm from "@/components/AddGameForm";
+import RandomPicker from "@/features/games/components/RandomPicker";
 
 export default function Dashboard() {
   const [games, setGames] = useState<Game[]>([]);
@@ -19,6 +20,7 @@ export default function Dashboard() {
       </h1>
 
       <AddGameForm onAdd={addGame} />
+      <RandomPicker games={games} />
 
       <div className="grid grid-cols-3 gap-4 mt-6">
         {games.map((game) => (
